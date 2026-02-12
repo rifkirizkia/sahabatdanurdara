@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan - Danurdara</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Danurdara</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="programs.html" class="nav-link">Program</a></li>
+                    <li><a href="activities.html" class="nav-link active">Kegiatan</a></li>
+                    <li><a href="#contact" class="nav-link btn-nav">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container text-center fade-in">
+            <h1>Galeri & Berita</h1>
+            <p>Dokumentasi jejak langkah kami di tengah masyarakat.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section-padding">
+        <div class="container">
+
+            <!-- Filters -->
+            <div class="gallery-filter text-center mb-5 fade-in">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="edukasi">Edukasi</button>
+                <button class="filter-btn" data-filter="sosial">Sosial</button>
+                <button class="filter-btn" data-filter="event">Event</button>
+            </div>
+
+            <div class="gallery-grid">
+
+                <!-- Item 1 -->
+                <div class="gallery-item fade-in" data-category="edukasi"
+                    data-description="Workshop koding untuk anak-anak desa, mengajarkan dasar-dasar pemrograman dan logika digital. Kegiatan ini diikuti oleh 30 peserta antusias.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #ffe0b2;">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <span class="activity-tag">Edukasi</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Workshop Koding</h3>
+                        <p>12 Oktober 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item fade-in" data-category="sosial"
+                    data-description="Bakti sosial di Desa X, membagikan sembako dan pelayanan kesehatan gratis bagi lansia. Total 100 paket sembako telah disalurkan.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #c8e6c9;">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <span class="activity-tag">Sosial</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Bakti Sosial Desa X</h3>
+                        <p>25 September 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item fade-in" data-category="event"
+                    data-description="Meeting tahunan anggota Danurdara, membahas evaluasi program kerja tahun lalu dan merencanakan strategi baru untuk tahun depan.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #bbdefb;">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="activity-tag">Event</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Meeting Tahunan</h3>
+                        <p>10 Agustus 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item fade-in" data-category="event"
+                    data-description="Festival budaya menampilkan tarian tradisional dan pameran kerajinan tangan lokal. Dihadiri oleh ratusan pengunjung dari berbagai daerah.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #e1bee7;">
+                            <i class="fa-solid fa-masks-theater"></i>
+                        </div>
+                        <span class="activity-tag">Event</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Festival Budaya</h3>
+                        <p>05 Juli 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item fade-in" data-category="edukasi"
+                    data-description="Program donasi buku untuk perpustakaan desa. Buku-buku yang terkumpul mencakup buku pelajaran, cerita anak, dan pengetahuan umum.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #ffccbc;">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <span class="activity-tag">Edukasi</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Donasi Buku</h3>
+                        <p>20 Juni 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item fade-in" data-category="edukasi"
+                    data-description="Pelatihan kewirausahaan digital untuk pelaku UMKM lokal. Materi mencakup pemasaran media sosial dan manajemen keuangan dasar.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #b2dfdb;">
+                            <i class="fa-solid fa-shop"></i>
+                        </div>
+                        <span class="activity-tag">Edukasi</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Pelatihan UMKM</h3>
+                        <p>15 Mei 2023</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Activity Modal -->
+    <div id="activity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <!-- Placeholder for image/canvas -->
+                    <div id="modal-image-placeholder" class="modal-image-placeholder">
+                        <i id="modal-icon" class="fa-solid fa-image"></i>
+                    </div>
+                </div>
+                <div class="modal-text">
+                    <span id="modal-category" class="modal-tag">Kategori</span>
+                    <h2 id="modal-title">Judul Kegiatan</h2>
+                    <p id="modal-date" class="modal-date">Tanggal</p>
+                    <div class="modal-description-container">
+                        <p id="modal-description">Deskripsi lengkap kegiatan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3 class="footer-logo">Danurdara</h3>
+                <p>Membangun generasi emas.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="programs.html">Program</a></li>
+                    <li><a href="activities.html">Kegiatan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-envelope"></i> info@danurdara.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2023 Danurdara.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

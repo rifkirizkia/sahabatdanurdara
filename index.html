@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danurdara - Membangun Masa Depan</title>
+    <meta name="description" content="Profil Perusahaan Danurdara - Komunitas dan Program Pengembangan Diri">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Danurdara</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="programs.html" class="nav-link">Program</a></li>
+                    <li><a href="activities.html" class="nav-link">Kegiatan</a></li>
+                    <li><a href="#contact" class="nav-link btn-nav">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center fade-in">
+            <h1 class="hero-title">Membangun Komunitas,<br>Mewujudkan Impian</h1>
+            <p class="hero-subtitle">Bergabunglah dengan Danurdara untuk menciptakan dampak positif bagi masyarakat
+                melalui program-program inovatif.</p>
+            <div class="hero-buttons">
+                <a href="programs.html" class="btn">Lihat Program</a>
+                <a href="about.html" class="btn btn-outline">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Summary Section -->
+    <section id="about" class="section-padding about-section">
+        <div class="container">
+            <div class="section-header text-center fade-in">
+                <h2 class="section-title">Tentang Danurdara</h2>
+                <p class="section-desc">Mengenal lebih dekat siapa kami dan apa yang kami perjuangkan.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image fade-in">
+                    <div class="image-placeholder">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                        <span>Foto Komunitas</span>
+                    </div>
+                </div>
+                <div class="about-content fade-in">
+                    <h3>Sejarah Singkat</h3>
+                    <p>Danurdara didirikan dengan visi untuk menjadi wadah bagi generasi muda dalam mengembangkan
+                        potensi diri. Kami percaya bahwa kolaborasi adalah kunci kemajuan.</p>
+                    <a href="about.html" class="btn mt-3">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Summary Section -->
+    <section id="programs" class="section-padding programs-section">
+        <div class="container">
+            <div class="section-header text-center fade-in">
+                <h2 class="section-title">Program Unggulan</h2>
+                <p class="section-desc">Inisiatif kami untuk mendorong pertumbuhan.</p>
+            </div>
+
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Edukasi</h3>
+                    <p>Pelatihan skill masa depan.</p>
+                    <a href="programs.html" class="read-more">Detail <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3>Sosial</h3>
+                    <p>Bakti untuk masyarakat.</p>
+                    <a href="programs.html" class="read-more">Detail <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="program-card fade-in">
+                    <div class="program-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Digital</h3>
+                    <p>Inovasi teknologi tepat guna.</p>
+                    <a href="programs.html" class="read-more">Detail <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-5 fade-in" style="margin-top: 40px;">
+                <a href="programs.html" class="btn btn-outline"
+                    style="border-color: var(--primary-color); color: var(--primary-color);">Lihat Semua Program</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Summary Section -->
+    <section id="activities" class="section-padding activities-section">
+        <div class="container">
+            <div class="section-header text-center fade-in">
+                <h2 class="section-title">Kegiatan Terbaru</h2>
+                <p class="section-desc">Apa yang baru saja kami lakukan.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Item 1 -->
+                <div class="gallery-item fade-in" data-category="edukasi"
+                    data-description="Workshop koding untuk anak-anak desa, mengajarkan dasar-dasar pemrograman dan logika digital. Kegiatan ini diikuti oleh 30 peserta antusias.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #ffe0b2;">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <span class="activity-tag">Edukasi</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Workshop Koding</h3>
+                        <p>12 Oktober 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item fade-in" data-category="sosial"
+                    data-description="Bakti sosial di Desa X, membagikan sembako dan pelayanan kesehatan gratis bagi lansia. Total 100 paket sembako telah disalurkan.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #c8e6c9;">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <span class="activity-tag">Sosial</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Bakti Sosial Desa X</h3>
+                        <p>25 September 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item fade-in" data-category="event"
+                    data-description="Meeting tahunan anggota Danurdara, membahas evaluasi program kerja tahun lalu dan merencanakan strategi baru untuk tahun depan.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #bbdefb;">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="activity-tag">Event</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Meeting Tahunan</h3>
+                        <p>10 Agustus 2023</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item fade-in" data-category="event"
+                    data-description="Meeting tahunan anggota Danurdara, membahas evaluasi program kerja tahun lalu dan merencanakan strategi baru untuk tahun depan.">
+                    <div class="gallery-thumb">
+                        <div class="image-placeholder-small" style="background-color: #bbdefb;">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="activity-tag">Event</span>
+                        <div class="gallery-overlay">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Meeting Tahunan</h3>
+                        <p>10 Agustus 2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 fade-in" style="margin-top: 40px;">
+                <a href="activities.html" class="btn">Lihat Semua Berita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Activity Modal -->
+    <div id="activity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <!-- Placeholder for image/canvas -->
+                    <div id="modal-image-placeholder" class="modal-image-placeholder">
+                        <i id="modal-icon" class="fa-solid fa-image"></i>
+                    </div>
+                </div>
+                <div class="modal-text">
+                    <span id="modal-category" class="modal-tag">Kategori</span>
+                    <h2 id="modal-title">Judul Kegiatan</h2>
+                    <p id="modal-date" class="modal-date">Tanggal</p>
+                    <div class="modal-description-container">
+                        <p id="modal-description">Deskripsi lengkap kegiatan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3 class="footer-logo">Danurdara</h3>
+                <p>Membangun generasi emas untuk masa depan yang lebih cerah. Bergabunglah bersama kami.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#programs">Program</a></li>
+                    <li><a href="#activities">Berita</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> Jl. Merdeka No. 123, Jakarta</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@danurdara.org</li>
+                    <li><i class="fa-solid fa-phone"></i> +62 812 3456 7890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2023 Danurdara. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
