@@ -893,7 +893,7 @@ img {
 /* Program Zig Zag */
 .program-detail-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 50px;
   margin-bottom: 80px;
 }
@@ -904,6 +904,9 @@ img {
 
 .program-detail-img {
   flex: 1;
+  position: sticky;
+  top: 150px; /* Adjusted to prevent touching header */
+  height: fit-content;
 }
 
 .program-detail-content {
@@ -1383,6 +1386,27 @@ img {
   }
 }
 
+
+/* Tablet & Mobile Responsive for Program Details */
+@media screen and (max-width: 991px) {
+  .program-detail-row,
+  .program-detail-row.reverse {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .program-detail-img {
+    position: static;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .program-number {
+    display: none;
+  }
+}
+
 /* Ensure smooth scrolling on mobile */
 @media screen and (max-width: 768px) {
   .partners-track {
@@ -1393,4 +1417,7 @@ img {
   .slide img {
     height: 40px;
   }
+
+  /* Redundant rules removed as they are covered by 991px block above, 
+     but keeping other 768px specific rules if any */
 }
