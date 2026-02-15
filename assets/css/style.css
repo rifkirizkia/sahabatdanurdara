@@ -209,7 +209,7 @@ img {
 .hero {
   height: 100vh;
   min-height: 600px;
-  background: url("../images/foto1.jpg") no-repeat center center;
+  background: url("../images/foto_home.png") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -296,6 +296,17 @@ img {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+.sticky-grid {
+  align-items: start;
+}
+
+.sticky-grid .about-image {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 150px;
+  height: fit-content;
 }
 
 .image-placeholder {
@@ -703,6 +714,24 @@ img {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #fff;
+}
+
+.about-header {
+  background-image: url("../images/foto_tentang_kami.jpeg");
+  height: 100vh;
+  min-height: 600px;
+}
+
+.program-header {
+  background-image: url("../images/foto_program.jpeg");
+  height: 100vh;
+  min-height: 600px;
+}
+
+.activities-header {
+  background-image: url("../images/foto_galeri.jpeg");
+  height: 100vh;
+  min-height: 600px;
 }
 
 /* Mission Box */
