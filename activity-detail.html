@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kegiatan - Danurdara</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Danurdara</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="programs.html" class="nav-link">Program</a></li>
+                    <li><a href="activities.html" class="nav-link active">Kegiatan</a></li>
+                    <li><a href="#contact" class="nav-link btn-nav">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Parallax) -->
+    <section class="activity-hero parallax-section">
+        <div class="hero-overlay"></div>
+        <div class="container text-center fade-in">
+            <span class="activity-hero-tag">Edukasi</span>
+            <h1>Workshop Koding Anak Desa</h1>
+            <p class="activity-hero-date"><i class="fa-regular fa-calendar"></i> 12 Oktober 2023</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="section-padding activity-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text fade-in">
+                    <h2>Membangun Masa Depan Digital</h2>
+                    <p class="lead">Mengajarkan logika pemrograman dasar kepada anak-anak sejak dini untuk mempersiapkan mereka menghadapi era digital.</p>
+                    <p>Kegiatan ini bertujuan untuk mengenalkan dunia teknologi informasi kepada anak-anak di desa yang mungkin memiliki akses terbatas. Melalui workshop ini, kami berharap dapat menumbuhkan minat mereka terhadap bidang STEM (Science, Technology, Engineering, and Mathematics).</p>
+                    <p>Materi yang disampaikan meliputi pengenalan algoritma sederhana, logika pemecahan masalah, dan praktik langsung membuat program sederhana menggunakan alat bantu visual yang menyenangkan.</p>
+                    
+                    <div class="stats-box mt-3">
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Peserta</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Mentor</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Jam Pelatihan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-highlight fade-in">
+                    <div class="highlight-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <blockquote>
+                            "Saya senang sekali bisa belajar membuat game sendiri! Kakak-kakak mentornya seru dan baik."
+                        </blockquote>
+                        <cite>- Budi, Peserta Workshop (10 tahun)</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2>Galeri Dokumentasi</h2>
+                <p>Momen-momen seru selama kegiatan berlangsung.</p>
+            </div>
+
+            <div class="detail-gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="detail-gallery-item fade-in">
+                    <img src="assets/images/foto_anak.jpg" alt="Foto Kegiatan 1" onclick="openLightbox(0)">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="detail-gallery-item fade-in">
+                    <img src="assets/images/foto_pendidikan.jpg" alt="Foto Kegiatan 2" onclick="openLightbox(1)">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="detail-gallery-item fade-in">
+                    <img src="assets/images/foto_visi_misi.png" alt="Foto Kegiatan 3" onclick="openLightbox(2)">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                 <!-- Gallery Item 4 -->
+                 <div class="detail-gallery-item fade-in">
+                    <img src="assets/images/foto_program.jpeg" alt="Foto Kegiatan 4" onclick="openLightbox(3)">
+                    <div class="overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-gallery" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content-wrapper">
+             <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <img class="lightbox-content" id="lightbox-img">
+             <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            <div id="caption"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3 class="footer-logo">Danurdara</h3>
+                <p>Membangun generasi emas.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="programs.html">Program</a></li>
+                    <li><a href="activities.html">Kegiatan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-envelope"></i> info@danurdara.org</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2023 Danurdara.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple Gallery Data (in a real app, this might come from a backend or data attribute)
+        const galleryImages = [
+            { src: 'assets/images/foto_anak.jpg', caption: 'Suasana belajar di kelas' },
+            { src: 'assets/images/foto_pendidikan.jpg', caption: 'Mentoring session' },
+            { src: 'assets/images/foto_visi_misi.png', caption: 'Foto bersama peserta' },
+            { src: 'assets/images/foto_program.jpeg', caption: 'Penyerahan sertifikat' }
+        ];
+
+        let currentSlideIndex = 0;
+
+        function openLightbox(index) {
+            currentSlideIndex = index;
+            const lightbox = document.getElementById('lightbox-gallery');
+            lightbox.classList.add('active'); // Use CSS class for display block
+            lightbox.style.display = 'flex'; // Ensure flex first
+             // Small timeout to allow transition
+            setTimeout(() => {
+                 lightbox.style.opacity = '1';
+            }, 10);
+            
+            showSlide(currentSlideIndex);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox-gallery');
+            lightbox.style.opacity = '0';
+             setTimeout(() => {
+                lightbox.classList.remove('active');
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+           
+        }
+
+        function changeSlide(n) {
+            currentSlideIndex += n;
+            if (currentSlideIndex >= galleryImages.length) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = galleryImages.length - 1;
+            }
+            showSlide(currentSlideIndex);
+        }
+
+        function showSlide(index) {
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('caption');
+            
+            // Allow image to be swapped smoothly
+            img.style.opacity = 0.5;
+            
+            setTimeout(() => {
+                img.src = galleryImages[index].src;
+                caption.innerText = galleryImages[index].caption;
+                img.style.opacity = 1;
+            }, 100);
+        }
+        
+        // Close on outside click
+        window.addEventListener('click', (e) => {
+             const lightbox = document.getElementById('lightbox-gallery');
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+
+</html>
