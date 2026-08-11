@@ -162,4 +162,58 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Auto Increment Counter Animation for Impact Statistics Section
+    const counterElements = document.querySelectorAll('.stat-number[data-target]');
+    if (counterElements.length > 0) {
+        const animateCount = (el) => {
+            if (el.classList.contains('counted')) return;
+            el.classList.add('counted');
+
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            const prefix = el.getAttribute('data-prefix') || '';
+            const duration = 2000; // 2 seconds
+            const startTime = performance.now();
+
+            const formatNumber = (num) => {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            };
+
+            const updateCount = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Ease-out cubic formula for smooth decelerating animation
+                const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.floor(easeOutProgress * target);
+
+                el.textContent = prefix + formatNumber(currentVal) + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    el.textContent = prefix + formatNumber(target) + suffix;
+                }
+            };
+
+            requestAnimationFrame(updateCount);
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number[data-target]');
+                    counters.forEach(animateCount);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const impactSection = document.querySelector('#impact') || document.querySelector('.impact-subsection') || document.querySelector('.impact-section');
+        if (impactSection) {
+            counterObserver.observe(impactSection);
+        }
+    }
 });
+

@@ -29,9 +29,9 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Beranda</a></li>
                     <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
-                    <li><a href="programs.html" class="nav-link">Program</a></li>
-                    <li><a href="activities.html" class="nav-link active">Kegiatan</a></li>
-                    <li><a href="#contact" class="nav-link btn-nav">Hubungi Kami</a></li>
+                    <li><a href="activities.html" class="nav-link active">Program</a></li>
+                    <li><a href="join.html" class="nav-link">Bergabung</a></li>
+                    <li><a href="gallery.html" class="nav-link btn-nav">Galeri</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,8 +40,8 @@
     <!-- Header -->
     <section class="page-header activities-header parallax-section">
         <div class="container text-center fade-in">
-            <h1>Galeri & Berita</h1>
-            <p>Dokumentasi jejak langkah kami di tengah masyarakat.</p>
+            <h1>Program Kami</h1>
+            <p>Aksi nyata kami dalam memberdayakan dan mendampingi masyarakat.</p>
         </div>
     </section>
 
@@ -60,108 +60,91 @@
             <div class="gallery-grid">
 
                 <!-- Item 1 -->
-                <div class="gallery-item fade-in" data-category="edukasi" onclick="window.location.href='activity-detail.html'" style="cursor: pointer;">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #ffe0b2;">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
+                <div class="gallery-item fade-in" data-category="edukasi" onclick="window.location.href='activity-detail.html?id=workshop-koding'" style="cursor: pointer;">
+                    <div class="gallery-thumb" style="height: 220px; overflow: hidden; position: relative;">
+                        <img src="assets/images/foto_anak.jpg" alt="Workshop Koding" style="width: 100%; height: 100%; object-fit: cover;">
                         <span class="activity-tag">Edukasi</span>
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Workshop Koding</h3>
+                        <h3>Workshop Koding & Digital</h3>
                         <p>12 Oktober 2023</p>
                     </div>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="gallery-item fade-in" data-category="sosial"
-                    data-description="Bakti sosial di Desa X, membagikan sembako dan pelayanan kesehatan gratis bagi lansia. Total 100 paket sembako telah disalurkan.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #c8e6c9;">
-                            <i class="fa-solid fa-hand-holding-heart"></i>
-                        </div>
+                <div class="gallery-item fade-in" data-category="sosial" onclick="window.location.href='activity-detail.html?id=bakti-sosial'" style="cursor: pointer;">
+                    <div class="gallery-thumb" style="height: 220px; overflow: hidden; position: relative;">
+                        <img src="assets/images/foto_lansia.png" alt="Bakti Sosial" style="width: 100%; height: 100%; object-fit: cover;">
                         <span class="activity-tag">Sosial</span>
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Bakti Sosial Desa X</h3>
+                        <h3>Bakti Sosial & Kesehatan Lansia</h3>
                         <p>25 September 2023</p>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
-                <div class="gallery-item fade-in" data-category="event"
-                    data-description="Meeting tahunan anggota Danurdara, membahas evaluasi program kerja tahun lalu dan merencanakan strategi baru untuk tahun depan.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #bbdefb;">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
+                <div class="gallery-item fade-in" data-category="event" onclick="window.location.href='activity-detail.html?id=meeting-tahunan'" style="cursor: pointer;">
+                    <div class="gallery-thumb" style="height: 220px; overflow: hidden; position: relative;">
+                        <img src="assets/images/foto_komunitas.jpeg" alt="Meeting Tahunan" style="width: 100%; height: 100%; object-fit: cover;">
                         <span class="activity-tag">Event</span>
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Meeting Tahunan</h3>
+                        <h3>Gathering Relawan Danurdara</h3>
                         <p>10 Agustus 2023</p>
                     </div>
                 </div>
 
                 <!-- Item 4 -->
-                <div class="gallery-item fade-in" data-category="event"
-                    data-description="Festival budaya menampilkan tarian tradisional dan pameran kerajinan tangan lokal. Dihadiri oleh ratusan pengunjung dari berbagai daerah.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #e1bee7;">
-                            <i class="fa-solid fa-masks-theater"></i>
-                        </div>
+                <div class="gallery-item fade-in" data-category="event" onclick="window.location.href='activity-detail.html?id=festival-budaya'" style="cursor: pointer;">
+                    <div class="gallery-thumb" style="height: 220px; overflow: hidden; position: relative;">
+                        <img src="assets/images/foto_galeri.jpeg" alt="Festival Budaya" style="width: 100%; height: 100%; object-fit: cover;">
                         <span class="activity-tag">Event</span>
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Festival Budaya</h3>
+                        <h3>Festival Seni & Budaya Pemuda</h3>
                         <p>05 Juli 2023</p>
                     </div>
                 </div>
 
                 <!-- Item 5 -->
-                <div class="gallery-item fade-in" data-category="edukasi"
-                    data-description="Program donasi buku untuk perpustakaan desa. Buku-buku yang terkumpul mencakup buku pelajaran, cerita anak, dan pengetahuan umum.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #ffccbc;">
-                            <i class="fa-solid fa-book"></i>
-                        </div>
+                <div class="gallery-item fade-in" data-category="edukasi" onclick="window.location.href='activity-detail.html?id=donasi-buku'" style="cursor: pointer;">
+                    <div class="gallery-thumb" style="height: 220px; overflow: hidden; position: relative;">
+                        <img src="assets/images/foto_pendidikan.jpg" alt="Donasi Buku" style="width: 100%; height: 100%; object-fit: cover;">
                         <span class="activity-tag">Edukasi</span>
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Donasi Buku</h3>
+                        <h3>Donasi & Penyaluran Buku</h3>
                         <p>20 Juni 2023</p>
                     </div>
                 </div>
 
                 <!-- Item 6 -->
-                <div class="gallery-item fade-in" data-category="edukasi"
-                    data-description="Pelatihan kewirausahaan digital untuk pelaku UMKM lokal. Materi mencakup pemasaran media sosial dan manajemen keuangan dasar.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #b2dfdb;">
-                            <i class="fa-solid fa-shop"></i>
-                        </div>
+                <div class="gallery-item fade-in" data-category="edukasi" onclick="window.location.href='activity-detail.html?id=pelatihan-umkm'" style="cursor: pointer;">
+                    <div class="gallery-thumb" style="height: 220px; overflow: hidden; position: relative;">
+                        <img src="assets/images/foto_pemberdayaan.png" alt="Pelatihan UMKM" style="width: 100%; height: 100%; object-fit: cover;">
                         <span class="activity-tag">Edukasi</span>
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-eye"></i>
                         </div>
                     </div>
                     <div class="gallery-info">
-                        <h3>Pelatihan UMKM</h3>
+                        <h3>Pelatihan Pemberdayaan UMKM</h3>
                         <p>15 Mei 2023</p>
                     </div>
                 </div>
@@ -209,8 +192,9 @@
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="programs.html">Program</a></li>
-                    <li><a href="activities.html">Kegiatan</a></li>
+                    <li><a href="activities.html">Program</a></li>
+                    <li><a href="join.html">Bergabung</a></li>
+                    <li><a href="gallery.html">Galeri</a></li>
                 </ul>
             </div>
             <div class="footer-col">

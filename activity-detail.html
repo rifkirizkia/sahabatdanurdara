@@ -29,21 +29,21 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Beranda</a></li>
                     <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
-                    <li><a href="programs.html" class="nav-link">Program</a></li>
-                    <li><a href="activities.html" class="nav-link active">Kegiatan</a></li>
-                    <li><a href="#contact" class="nav-link btn-nav">Hubungi Kami</a></li>
+                    <li><a href="activities.html" class="nav-link active">Program</a></li>
+                    <li><a href="join.html" class="nav-link">Bergabung</a></li>
+                    <li><a href="gallery.html" class="nav-link btn-nav">Galeri</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section (Parallax) -->
-    <section class="activity-hero parallax-section">
+    <section class="activity-hero parallax-section" id="hero-section">
         <div class="hero-overlay"></div>
-        <div class="container text-center fade-in">
-            <span class="activity-hero-tag">Edukasi</span>
-            <h1>Workshop Koding Anak Desa</h1>
-            <p class="activity-hero-date"><i class="fa-regular fa-calendar"></i> 12 Oktober 2023</p>
+        <div class="container text-center fade-in hero-content">
+            <span class="activity-hero-tag" id="detail-tag">Loading...</span>
+            <h1 id="detail-title">Memuat Kegiatan...</h1>
+            <p class="activity-hero-date" id="detail-date"><i class="fa-regular fa-calendar"></i> -</p>
         </div>
     </section>
 
@@ -51,34 +51,21 @@
     <section class="section-padding activity-content">
         <div class="container">
             <div class="content-grid">
-                <div class="content-text fade-in">
-                    <h2>Membangun Masa Depan Digital</h2>
-                    <p class="lead">Mengajarkan logika pemrograman dasar kepada anak-anak sejak dini untuk mempersiapkan mereka menghadapi era digital.</p>
-                    <p>Kegiatan ini bertujuan untuk mengenalkan dunia teknologi informasi kepada anak-anak di desa yang mungkin memiliki akses terbatas. Melalui workshop ini, kami berharap dapat menumbuhkan minat mereka terhadap bidang STEM (Science, Technology, Engineering, and Mathematics).</p>
-                    <p>Materi yang disampaikan meliputi pengenalan algoritma sederhana, logika pemecahan masalah, dan praktik langsung membuat program sederhana menggunakan alat bantu visual yang menyenangkan.</p>
+                <div class="content-text fade-in" id="detail-description">
+                    <!-- Description will be injected here -->
+                    <p>Sedang memuat data...</p>
                     
-                    <div class="stats-box mt-3">
-                        <div class="stat-item">
-                            <span class="stat-number">30+</span>
-                            <span class="stat-label">Peserta</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Mentor</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">6</span>
-                            <span class="stat-label">Jam Pelatihan</span>
-                        </div>
+                    <div class="stats-box mt-3" id="detail-stats">
+                        <!-- Stats will be injected here -->
                     </div>
                 </div>
                 <div class="content-highlight fade-in">
                     <div class="highlight-card">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
-                        <blockquote>
-                            "Saya senang sekali bisa belajar membuat game sendiri! Kakak-kakak mentornya seru dan baik."
+                        <blockquote id="detail-quote">
+                            "..."
                         </blockquote>
-                        <cite>- Budi, Peserta Workshop (10 tahun)</cite>
+                        <cite id="detail-quote-author">- ...</cite>
                     </div>
                 </div>
             </div>
@@ -93,35 +80,8 @@
                 <p>Momen-momen seru selama kegiatan berlangsung.</p>
             </div>
 
-            <div class="detail-gallery-grid">
-                <!-- Gallery Item 1 -->
-                <div class="detail-gallery-item fade-in">
-                    <img src="assets/images/foto_anak.jpg" alt="Foto Kegiatan 1" onclick="openLightbox(0)">
-                    <div class="overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                    </div>
-                </div>
-                <!-- Gallery Item 2 -->
-                <div class="detail-gallery-item fade-in">
-                    <img src="assets/images/foto_pendidikan.jpg" alt="Foto Kegiatan 2" onclick="openLightbox(1)">
-                    <div class="overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                    </div>
-                </div>
-                <!-- Gallery Item 3 -->
-                <div class="detail-gallery-item fade-in">
-                    <img src="assets/images/foto_visi_misi.png" alt="Foto Kegiatan 3" onclick="openLightbox(2)">
-                    <div class="overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                    </div>
-                </div>
-                 <!-- Gallery Item 4 -->
-                 <div class="detail-gallery-item fade-in">
-                    <img src="assets/images/foto_program.jpeg" alt="Foto Kegiatan 4" onclick="openLightbox(3)">
-                    <div class="overlay">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i>
-                    </div>
-                </div>
+            <div class="detail-gallery-grid" id="detail-gallery-grid">
+                <!-- Gallery items will be injected here -->
             </div>
         </div>
     </section>
@@ -153,8 +113,9 @@
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="programs.html">Program</a></li>
-                    <li><a href="activities.html">Kegiatan</a></li>
+                    <li><a href="activities.html">Program</a></li>
+                    <li><a href="join.html">Bergabung</a></li>
+                    <li><a href="gallery.html">Galeri</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -170,23 +131,83 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/activities-data.js"></script>
     <script>
-        // Simple Gallery Data (in a real app, this might come from a backend or data attribute)
-        const galleryImages = [
-            { src: 'assets/images/foto_anak.jpg', caption: 'Suasana belajar di kelas' },
-            { src: 'assets/images/foto_pendidikan.jpg', caption: 'Mentoring session' },
-            { src: 'assets/images/foto_visi_misi.png', caption: 'Foto bersama peserta' },
-            { src: 'assets/images/foto_program.jpeg', caption: 'Penyerahan sertifikat' }
-        ];
+        // Logic to populate page based on URL parameter
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const activityId = urlParams.get('id');
 
+            // Default to 'workshop-koding' if no ID provided (for testing/demo)
+            const idToLoad = activityId || 'workshop-koding'; 
+            const data = activitiesData[idToLoad];
+
+            if (data) {
+                // Populate Hero
+                document.getElementById('detail-tag').innerText = data.tag;
+                document.getElementById('detail-title').innerText = data.title;
+                document.getElementById('detail-date').innerHTML = `<i class="fa-regular fa-calendar"></i> ${data.date}`;
+                document.getElementById('hero-section').style.backgroundImage = `url('${data.heroImage}')`;
+
+                // Populate Text Content
+                document.getElementById('detail-description').innerHTML = data.description + `
+                    <div class="stats-box mt-3" id="detail-stats"></div>
+                `;
+
+                // Populate Stats
+                const statsContainer = document.getElementById('detail-stats');
+                data.stats.forEach(stat => {
+                    statsContainer.innerHTML += `
+                        <div class="stat-item">
+                            <span class="stat-number">${stat.number}</span>
+                            <span class="stat-label">${stat.label}</span>
+                        </div>
+                    `;
+                });
+
+                // Populate Quote
+                document.getElementById('detail-quote').innerText = `"${data.quote}"`;
+                document.getElementById('detail-quote-author').innerText = `- ${data.quoteAuthor}`;
+
+                // Populate Gallery
+                const galleryGrid = document.getElementById('detail-gallery-grid');
+                // Clear existing items (though it should be empty initially)
+                galleryGrid.innerHTML = ''; 
+                
+                // Update global galleryImages for lightbox
+                window.galleryImages = data.gallery; 
+
+                data.gallery.forEach((item, index) => {
+                    galleryGrid.innerHTML += `
+                        <div class="detail-gallery-item fade-in" onclick="openLightbox(${index})">
+                            <img src="${item.src}" alt="${item.caption}">
+                            <div class="overlay">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Re-trigger fade-in observer for new elements if needed
+                // (Optional, depending on main.js implementation)
+                
+            } else {
+                // Handle case where ID not found
+                document.querySelector('.activity-content').innerHTML = '<div class="container text-center"><h2>Kegiatan tidak ditemukan.</h2><a href="activities.html" class="btn mt-3">Kembali ke Kegiatan</a></div>';
+                document.querySelector('.activity-hero').style.display = 'none';
+            }
+        });
+
+        // Lightbox Functions (Modified to use window.galleryImages)
         let currentSlideIndex = 0;
 
         function openLightbox(index) {
+            if (!window.galleryImages || window.galleryImages.length === 0) return;
+            
             currentSlideIndex = index;
             const lightbox = document.getElementById('lightbox-gallery');
-            lightbox.classList.add('active'); // Use CSS class for display block
-            lightbox.style.display = 'flex'; // Ensure flex first
-             // Small timeout to allow transition
+            lightbox.classList.add('active'); 
+            lightbox.style.display = 'flex'; 
             setTimeout(() => {
                  lightbox.style.opacity = '1';
             }, 10);
@@ -207,30 +228,32 @@
         }
 
         function changeSlide(n) {
+            if (!window.galleryImages) return;
+            
             currentSlideIndex += n;
-            if (currentSlideIndex >= galleryImages.length) {
+            if (currentSlideIndex >= window.galleryImages.length) {
                 currentSlideIndex = 0;
             } else if (currentSlideIndex < 0) {
-                currentSlideIndex = galleryImages.length - 1;
+                currentSlideIndex = window.galleryImages.length - 1;
             }
             showSlide(currentSlideIndex);
         }
 
         function showSlide(index) {
+            if (!window.galleryImages) return;
+            
             const img = document.getElementById('lightbox-img');
             const caption = document.getElementById('caption');
             
-            // Allow image to be swapped smoothly
             img.style.opacity = 0.5;
             
             setTimeout(() => {
-                img.src = galleryImages[index].src;
-                caption.innerText = galleryImages[index].caption;
+                img.src = window.galleryImages[index].src;
+                caption.innerText = window.galleryImages[index].caption;
                 img.style.opacity = 1;
             }, 100);
         }
         
-        // Close on outside click
         window.addEventListener('click', (e) => {
              const lightbox = document.getElementById('lightbox-gallery');
             if (e.target === lightbox) {
