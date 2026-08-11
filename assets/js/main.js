@@ -215,5 +215,24 @@ document.addEventListener('DOMContentLoaded', () => {
             counterObserver.observe(impactSection);
         }
     }
+
+    // Satellite Avatar Interactive Switcher for Testimonial Section
+    const satelliteAvatars = document.querySelectorAll('.satellite-avatar');
+    const mainAvatarImg = document.querySelector('.main-avatar-wrapper img');
+    if (satelliteAvatars.length > 0 && mainAvatarImg) {
+        satelliteAvatars.forEach(avatar => {
+            avatar.addEventListener('click', () => {
+                const newSrc = avatar.querySelector('img').getAttribute('src');
+                mainAvatarImg.style.opacity = '0.3';
+                mainAvatarImg.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    mainAvatarImg.setAttribute('src', newSrc);
+                    mainAvatarImg.style.opacity = '1';
+                    mainAvatarImg.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    }
 });
+
 

@@ -2185,3 +2185,213 @@ img {
   flex-grow: 1;
 }
 
+/* ==========================================================================
+   Testimonial Section ("Apa Kata Mereka?") - Theme Aligned
+   ========================================================================== */
+.testimonial-section {
+  background: linear-gradient(135deg, #0e2a14 0%, #1b5e20 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-header h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.testimonial-header h2 span {
+  color: var(--secondary-color);
+}
+
+.testimonial-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px 0 20px;
+}
+
+.testimonial-divider .line {
+  width: 50px;
+  height: 2px;
+  background: var(--secondary-color);
+}
+
+.testimonial-divider .square {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--secondary-color);
+  transform: rotate(45deg);
+}
+
+.testimonial-desc {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Left Orbit Container */
+.avatar-orbit-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-circle-dotted {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px dashed rgba(249, 168, 37, 0.4);
+  animation: spinOrbit 40s linear infinite;
+}
+
+@keyframes spinOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.main-avatar-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255,255,255,0.4) 100%);
+  box-shadow: 0 0 35px rgba(249, 168, 37, 0.4);
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.main-avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Satellite Orbit Avatars */
+.satellite-avatar {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #0e2a14;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.satellite-avatar:hover {
+  transform: scale(1.2);
+  border-color: var(--secondary-color);
+}
+
+.satellite-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sat-1 { width: 65px; height: 65px; top: 15px; right: 80px; }
+.sat-2 { width: 55px; height: 55px; top: 40px; left: 60px; }
+.sat-3 { width: 50px; height: 50px; top: 120px; left: 10px; }
+.sat-4 { width: 58px; height: 58px; bottom: 80px; left: 25px; }
+.sat-5 { width: 52px; height: 52px; bottom: 20px; left: 95px; }
+.sat-6 { width: 60px; height: 60px; bottom: 25px; right: 75px; }
+.sat-7 { width: 55px; height: 55px; top: 110px; right: 20px; }
+
+/* Right Testimonial Content */
+.testimonial-content {
+  text-align: left;
+}
+
+.quote-mark {
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+}
+
+.star-rating {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.testimonial-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.testimonial-quote {
+  color: #f1f5f9;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-info h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.author-info p {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .avatar-orbit-container {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .orbit-circle-dotted {
+    width: 260px;
+    height: 260px;
+  }
+
+  .main-avatar-wrapper {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+
