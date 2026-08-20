@@ -1,21 +1,30 @@
 /* CSS Variables */
 :root {
-  --primary-color: #2e7d32;
-  /* Deep Green */
-  --secondary-color: #f9a825;
-  --secondary-dark-color: #a46500;
-  /* Vibrant Yellow */
-  --accent-color: #ffd600;
-  /* Bright Yellow Accent */
-  --text-color: #333333;
-  --bg-color: #f5f5f5;
+  --primary-color: #429030;
+  /* Emerald Green */
+  --primary-dark-color: #2D6320;
+  /* Deep Emphasis */
+  --primary-deep-surface: #132E14;
+  /* Deep Forest */
+  --secondary-color: #EBDF01;
+  /* Vibrant Warm Yellow */
+  --secondary-dark-color: #D8CD00;
+  --accent-color: #EBDF01;
+  /* Yellow Accent */
+  --text-color: #1E293B;
+  /* Slate 800 */
+  --text-muted: #64748B;
+  /* Slate 500 */
+  --bg-color: #FBFDF9;
+  /* Soft Off-White */
   --light-bg: #ffffff;
-  --dark-bg: #1b5e20;
-  /* Darker Green for Footer/Header */
-  --font-primary: "Inter", sans-serif;
-  --font-heading: "Outfit", sans-serif;
-  --transition: all 0.3s ease;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --dark-bg: #132E14;
+  /* Deep Forest Green for Footer/Header */
+  --font-primary: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-heading: "Plus Jakarta Sans", "Outfit", sans-serif;
+  --transition: all 0.3s ease-in-out;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --border-radius: 16px;
 }
 
 /* Reset & Base Styles */
@@ -83,15 +92,16 @@ img {
   padding: 12px 24px;
   background-color: var(--secondary-color);
   color: var(--dark-bg);
-  border-radius: 5px;
-  font-weight: 600;
+  border-radius: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.9rem;
   box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 .btn:hover {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-dark-color);
   transform: translateY(-2px);
 }
 
@@ -171,14 +181,15 @@ img {
 }
 
 .btn-nav {
-  padding: 10px 20px;
+  padding: 10px 24px;
   background-color: var(--primary-color);
   color: #fff !important;
-  border-radius: 5px;
+  border-radius: 9999px;
+  font-weight: 600;
 }
 
 .btn-nav:hover {
-  background-color: var(--dark-bg);
+  background-color: var(--primary-dark-color);
   color: #fff;
   transform: translateY(-2px);
 }
@@ -233,7 +244,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(27, 94, 32, 0.9));
+  background: linear-gradient(rgba(66, 144, 48, 0.85), rgba(19, 46, 20, 0.92));
 }
 
 .hero-content {
@@ -268,10 +279,11 @@ img {
   background-color: transparent;
   color: #fff;
   border: 2px solid #fff;
-  border-radius: 5px;
+  border-radius: 12px;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.9rem;
+  transition: var(--transition);
 }
 
 .btn-outline:hover {
@@ -359,7 +371,7 @@ img {
 .program-card {
   background-color: #fff;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 16px;
   box-shadow: var(--shadow);
   transition: var(--transition);
   border-bottom: 5px solid var(--secondary-color);
@@ -373,7 +385,7 @@ img {
 .program-icon {
   width: 70px;
   height: 70px;
-  background-color: rgba(46, 125, 50, 0.1);
+  background-color: rgba(66, 144, 48, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -422,7 +434,7 @@ img {
 
 .news-item {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
@@ -744,7 +756,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(27, 94, 32, 0.9));
+  background: linear-gradient(rgba(19, 46, 20, 0.85), rgba(19, 46, 20, 0.92));
 }
 
 .page-header .container {
@@ -780,7 +792,7 @@ img {
 .mission-box {
   background: #fff;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 16px;
   box-shadow: var(--shadow);
   border-left: 5px solid var(--secondary-color);
 }
@@ -1585,34 +1597,33 @@ img {
   display: flex;
   gap: 40px;
   width: max-content;
-  animation: scroll 20s linear infinite;
+  animation: marquee-scroll 25s linear infinite;
 }
 
 .partners-track:hover {
-  animation-play-state: paused; /* User requested "auto scroll dan tidak berhenti," but pause on hover is good UX. I will keep it for now. */
+  animation-play-state: paused;
 }
 
 .slide img {
-  height: 60px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.7;
-  transition: var(--transition);
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
 }
 
 .slide img:hover {
   filter: grayscale(0%);
   opacity: 1;
-  transition: all 0.3s ease;
+  transform: scale(1.05);
 }
 
-@keyframes scroll {
-  to {
-    transform: translateX(
-      calc(-50% - 20px)
-    ); /* -50% of the track width minus half the gap roughly, to be precise we need -50% of total width which is correct if track has 2 sets */
-    /* Actually, if track is width: max-content and contains 2 sets, translateX(-50%) should work perfectly if gaps are handled correctly or if 50% is half the width. */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
     transform: translateX(-50%);
   }
 }
@@ -2121,12 +2132,12 @@ img {
 
 .focus-card {
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 30px 25px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(66, 144, 48, 0.12);
+  box-shadow: var(--shadow);
   position: relative;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
   border-top: 4px solid var(--primary-color);
@@ -2148,14 +2159,14 @@ img {
 .focus-icon {
   width: 50px;
   height: 50px;
-  border-radius: 10px;
-  background-color: rgba(46, 125, 50, 0.1);
+  border-radius: 12px;
+  background-color: rgba(66, 144, 48, 0.1);
   color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: var(--transition);
 }
 
 .focus-card:hover .focus-icon {
@@ -2189,7 +2200,7 @@ img {
    Testimonial Section ("Apa Kata Mereka?") - Theme Aligned
    ========================================================================== */
 .testimonial-section {
-  background: linear-gradient(135deg, #0e2a14 0%, #1b5e20 100%);
+  background: linear-gradient(135deg, #132E14 0%, #1A3E1B 100%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -2259,7 +2270,7 @@ img {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  border: 2px dashed rgba(249, 168, 37, 0.4);
+  border: 2px dashed rgba(235, 223, 1, 0.4);
   animation: spinOrbit 40s linear infinite;
 }
 
@@ -2275,9 +2286,9 @@ img {
   border-radius: 50%;
   padding: 6px;
   background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255,255,255,0.4) 100%);
-  box-shadow: 0 0 35px rgba(249, 168, 37, 0.4);
+  box-shadow: 0 0 35px rgba(235, 223, 1, 0.3);
   z-index: 5;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .main-avatar-wrapper img {
@@ -2291,10 +2302,10 @@ img {
 .satellite-avatar {
   position: absolute;
   border-radius: 50%;
-  border: 3px solid #0e2a14;
+  border: 3px solid #132E14;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
   cursor: pointer;
 }
 

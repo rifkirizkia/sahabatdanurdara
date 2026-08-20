@@ -4,36 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fokus Kami - Danurdara</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Fokus Kami - Sahabat Danurdara</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#429030',
+                            dark: '#2D6320',
+                            deep: '#132E14',
+                            secondary: '#EBDF01',
+                            'secondary-dark': '#D8CD00',
+                        },
+                        emerald: {
+                            50: '#F5FBF3',
+                            100: '#E6F5E1',
+                            200: '#CBEABF',
+                            300: '#A4DC93',
+                            400: '#75C75E',
+                            500: '#429030',
+                            600: '#347525',
+                            700: '#2D6320',
+                            800: '#429030',
+                            900: '#132E14',
+                            950: '#0B1B0C',
+                        },
+                        mint: '#DCFCE7',
+                        accent: {
+                            DEFAULT: '#EBDF01',
+                            hover: '#D8CD00',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Danurdara</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <nav class="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Beranda</a></li>
-                    <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
-                    <li><a href="activities.html" class="nav-link">Program</a></li>
-                    <li><a href="join.html" class="nav-link">Bergabung</a></li>
-                    <li><a href="gallery.html" class="nav-link btn-nav">Galeri</a></li>
-                </ul>
-            </nav>
+    <!-- 1. FLOATING GLASSMORPHISM NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-100/80 shadow-xs transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="assets/images/logo-new.png" alt="Sahabat Danurdara" class="h-14 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Beranda</a>
+                    <a href="about.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Tentang Kami</a>
+                    <a href="activities.html" class="relative px-4 py-2 text-sm font-semibold text-emerald-800 transition-colors group">
+                        Program
+                        <span class="absolute bottom-0 left-4 right-4 h-0.5 bg-emerald-800 rounded-full"></span>
+                    </a>
+                    <a href="gallery.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Galeri</a>
+                    <a href="join.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Bergabung</a>
+                </nav>
+
+                <!-- Action Button CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="join.html" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-emerald-800 hover:bg-emerald-900 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-emerald-900/10">
+                        Gabung Sekarang
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-toggle" type="button" class="p-2.5 rounded-xl text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 focus:outline-none transition-colors" aria-label="Toggle Navigation Menu">
+                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="index.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Beranda</a>
+            <a href="about.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Tentang Kami</a>
+            <a href="activities.html" class="block px-4 py-2.5 rounded-lg text-base font-semibold text-emerald-800 bg-emerald-50/80">Program</a>
+            <a href="gallery.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Galeri</a>
+            <a href="join.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Bergabung</a>
+            <div class="pt-3">
+                <a href="join.html" class="block text-center w-full px-6 py-3 rounded-full text-base font-semibold text-white bg-emerald-800 hover:bg-emerald-900 shadow-md">
+                    Gabung Sekarang
+                </a>
+            </div>
         </div>
     </header>
 
@@ -215,39 +289,111 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3 class="footer-logo">Danurdara</h3>
-                <p>Membangun generasi emas untuk masa depan.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <!-- 8. PROFESSIONAL DARK FOOTER -->
+    <footer class="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <!-- Col 1 (Brand Info - 2 cols) -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="inline-block">
+                        <img src="assets/images/logo-new.png" alt="Danurdara Logo" class="h-14 sm:h-16 w-auto object-contain bg-white/95 px-4 py-2 rounded-xl shadow-xs">
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Gerakan sosial independen yang bergerak di bidang pendampingan anak, dukungan psikososial lansia, dan pemberdayaan masyarakat.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-800 transition-colors">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-800 transition-colors">
+                            <i class="fa-brands fa-facebook text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-800 transition-colors">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 (Navigasi) -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Beranda</a></li>
+                        <li><a href="about.html" class="hover:text-emerald-400 transition-colors">Tentang Kami</a></li>
+                        <li><a href="activities.html" class="hover:text-emerald-400 transition-colors">Program Utama</a></li>
+                        <li><a href="gallery.html" class="hover:text-emerald-400 transition-colors">Galeri Foto</a></li>
+                        <li><a href="join.html" class="hover:text-emerald-400 transition-colors">Bergabung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 (Pilar Gerakan) -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Pilar Gerakan</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>Pemberdayaan Anak</li>
+                        <li>Dukungan Lansia</li>
+                        <li>Edukasi & Lingkungan</li>
+                        <li>Aksi Tanggap Sosial</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 (Kontak Kami) -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Kontak</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-location-dot mt-1 text-emerald-500"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5">
+                            <i class="fa-solid fa-envelope text-emerald-500"></i>
+                            <span>halo@danurdara.org</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5">
+                            <i class="fa-solid fa-phone text-emerald-500"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Tautan Cepat</h4>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="programs.html">Fokus</a></li>
-                    <li><a href="activities.html">Program</a></li>
-                </ul>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-4 sm:space-y-0">
+                <p>&copy; 2026 Sahabat Danurdara. Hak Cipta Dilindungi.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-slate-400">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-slate-400">Syarat & Ketentuan</a>
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Kontak</h4>
-                <ul class="contact-info">
-                    <li><i class="fa-solid fa-envelope"></i> info@danurdara.org</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2023 Danurdara.</p>
         </div>
     </footer>
 
+    <!-- Main JavaScript File -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- JavaScript for Mobile Menu Drawer Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('mobile-menu-icon');
+
+            if (toggleBtn && mobileMenu) {
+                toggleBtn.addEventListener('click', () => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-xmark');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
