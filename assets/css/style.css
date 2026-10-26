@@ -1587,7 +1587,7 @@ img {
   overflow: hidden;
   width: 100%;
   position: relative;
-  padding: 20px 0;
+  padding: 24px 0;
   background: white; /* Ensure background matches */
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -1595,28 +1595,35 @@ img {
 
 .partners-track {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 48px;
   width: max-content;
-  animation: marquee-scroll 25s linear infinite;
+  animation: marquee-scroll 38s linear infinite;
 }
 
 .partners-track:hover {
   animation-play-state: paused;
 }
 
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85px;
+  flex-shrink: 0;
+}
+
 .slide img {
-  height: 50px;
+  height: 72px;
+  max-width: 180px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.6;
+  opacity: 1;
   transition: all 0.3s ease-in-out;
 }
 
 .slide img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 @keyframes marquee-scroll {
@@ -1652,12 +1659,17 @@ img {
 /* Ensure smooth scrolling on mobile */
 @media screen and (max-width: 768px) {
   .partners-track {
-    gap: 30px;
-    animation-duration: 15s;
+    gap: 32px;
+    animation-duration: 25s;
+  }
+
+  .slide {
+    height: 65px;
   }
 
   .slide img {
-    height: 40px;
+    height: 52px;
+    max-width: 130px;
   }
 
   /* Redundant rules removed as they are covered by 991px block above, 

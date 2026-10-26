@@ -51,7 +51,7 @@ Dokumen ini berisi panduan desain, warna, tipografi, dan aturan UI yang digunaka
   - **Info:** Tanggal dengan icon calendar mini, judul maksimal 2 baris (truncated), dan tombol "Detail Kegiatan" yang clean.
 
 ### F. Partner & Kolaborator
-- Logo slider / marquee format grayscale yang berubah menjadi full color saat di-hover.
+- Logo slider / marquee tampil langsung full color (tidak grayscale) dengan animasi hover halus.
 
 ### G. Footer
 - **Background:** `#132E14` (Deep Forest Green).
