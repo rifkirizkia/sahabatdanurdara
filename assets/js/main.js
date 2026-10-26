@@ -171,9 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.add('counted');
 
             const target = parseInt(el.getAttribute('data-target'), 10);
-            const suffix = el.getAttribute('data-suffix') || '';
-            const prefix = el.getAttribute('data-prefix') || '';
-            const duration = 2000; // 2 seconds
+            const duration = 2000; // ~2 seconds
             const startTime = performance.now();
 
             const formatNumber = (num) => {
@@ -184,16 +182,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 
-                // Ease-out cubic formula for smooth decelerating animation
+                // Ease-out cubic formula for smooth decelerating animation (0 -> target)
                 const easeOutProgress = 1 - Math.pow(1 - progress, 3);
                 const currentVal = Math.floor(easeOutProgress * target);
 
-                el.textContent = prefix + formatNumber(currentVal) + suffix;
+                el.textContent = formatNumber(currentVal);
 
                 if (progress < 1) {
                     requestAnimationFrame(updateCount);
                 } else {
-                    el.textContent = prefix + formatNumber(target) + suffix;
+                    el.textContent = formatNumber(target);
                 }
             };
 
@@ -203,17 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const counterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('.stat-number[data-target]');
-                    counters.forEach(animateCount);
+                    animateCount(entry.target);
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
 
-        const impactSection = document.querySelector('#impact') || document.querySelector('.impact-subsection') || document.querySelector('.impact-section');
-        if (impactSection) {
-            counterObserver.observe(impactSection);
-        }
+        counterElements.forEach(el => counterObserver.observe(el));
     }
 
     // Satellite Avatar Interactive Switcher for Testimonial Section
@@ -232,6 +226,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 200);
             });
         });
+    }
+
+    // Conditional visibility for "Lihat Semua Kegiatan" button on Homepage
+    const kegiatanGrid = document.getElementById('kegiatan-grid');
+    const seeAllBtnWrapper = document.getElementById('see-all-kegiatan-wrapper');
+    if (kegiatanGrid && seeAllBtnWrapper) {
+        const totalActivitiesAttr = kegiatanGrid.getAttribute('data-total-activities');
+        const totalActivities = totalActivitiesAttr ? parseInt(totalActivitiesAttr, 10) : 6;
+        
+        if (totalActivities > 4) {
+            seeAllBtnWrapper.style.display = 'block';
+        } else {
+            seeAllBtnWrapper.style.display = 'none';
+        }
     }
 });
 

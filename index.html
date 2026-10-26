@@ -1,368 +1,568 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danurdara - Membangun Masa Depan</title>
-    <meta name="description" content="Profil Perusahaan Danurdara - Komunitas dan Program Pengembangan Diri">
+    <title>Sahabat Danurdara - Membangun Harapan Melalui Kolaborasi Komunitas</title>
+    <meta name="description" content="Komunitas sosial independen berfokus pada pendampingan anak, dukungan psikososial lansia, dan pemberdayaan masyarakat.">
 
-    <!-- Google Fonts -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#429030',
+                            dark: '#2D6320',
+                            deep: '#132E14',
+                            secondary: '#EBDF01',
+                            'secondary-dark': '#D8CD00',
+                        },
+                        emerald: {
+                            50: '#F5FBF3',
+                            100: '#E6F5E1',
+                            200: '#CBEABF',
+                            300: '#A4DC93',
+                            400: '#75C75E',
+                            500: '#429030',
+                            600: '#347525',
+                            700: '#2D6320',
+                            800: '#429030',
+                            900: '#132E14',
+                            950: '#0B1B0C',
+                        },
+                        mint: '#DCFCE7',
+                        accent: {
+                            DEFAULT: '#EBDF01',
+                            hover: '#D8CD00',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
 
-    <!-- Navigation -->
-    <header class="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">Danurdara</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <nav class="nav-menu">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active">Beranda</a></li>
-                    <li><a href="about.html" class="nav-link">Tentang Kami</a></li>
-                    <li><a href="activities.html" class="nav-link">Program</a></li>
-                    <li><a href="join.html" class="nav-link">Bergabung</a></li>
-                    <li><a href="gallery.html" class="nav-link btn-nav">Galeri</a></li>
-                </ul>
-            </nav>
+    <!-- 1. FLOATING GLASSMORPHISM NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-100/80 shadow-xs transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Badge -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="assets/images/logo-new.png" alt="Sahabat Danurdara" class="h-14 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="index.html" class="relative px-4 py-2 text-sm font-semibold text-emerald-800 transition-colors group">
+                        Beranda
+                        <span class="absolute bottom-0 left-4 right-4 h-0.5 bg-emerald-800 rounded-full"></span>
+                    </a>
+                    <a href="about.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Tentang Kami</a>
+                    <a href="activities.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Program</a>
+                    <a href="gallery.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Galeri</a>
+                    <a href="activities.html" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-emerald-800 transition-colors rounded-lg hover:bg-slate-100/60">Berita</a>
+                </nav>
+
+                <!-- Action Button CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="join.html" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-emerald-800 hover:bg-emerald-900 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-emerald-900/10">
+                        Gabung Sekarang
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-toggle" type="button" class="p-2.5 rounded-xl text-slate-600 hover:text-emerald-800 hover:bg-emerald-50 focus:outline-none transition-colors" aria-label="Toggle Navigation Menu">
+                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="index.html" class="block px-4 py-2.5 rounded-lg text-base font-semibold text-emerald-800 bg-emerald-50/80">Beranda</a>
+            <a href="about.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Tentang Kami</a>
+            <a href="activities.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Program</a>
+            <a href="gallery.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Galeri</a>
+            <a href="activities.html" class="block px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-800 hover:bg-slate-50">Berita</a>
+            <div class="pt-3">
+                <a href="join.html" class="block text-center w-full px-6 py-3 rounded-full text-base font-semibold text-white bg-emerald-800 hover:bg-emerald-900 shadow-md">
+                    Gabung Sekarang
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content text-center fade-in">
-            <h1 class="hero-title">Aksi Nyata<br>Penuh Arti</h1>
-            <p class="hero-subtitle">Bergabunglah dengan Danurdara untuk menciptakan dampak positif bagi masyarakat
-                melalui program-program inovatif.</p>
-            <div class="hero-buttons">
-                <a href="activities.html" class="btn">Lihat Program</a>
-                <a href="join.html" class="btn btn-outline">Bergabung</a>
+    <!-- 2. HERO SECTION (SPLIT LAYOUT CONCEPT) -->
+    <section id="home" class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden">
+        <!-- Subtle Ambient Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-100/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute top-12 right-10 w-72 h-72 bg-emerald-200/30 rounded-full blur-2xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column (Text & Action - 60%) -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <!-- Category Badge -->
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200/80 text-emerald-900 text-xs font-bold tracking-wide">
+                        <span>🌱</span>
+                        <span>TENTANG KAMI</span>
+                    </div>
+
+                    <!-- Headline H1 -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                        Membangun Harapan Melalui <span class="bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent">Kolaborasi Komunitas</span>
+                    </h1>
+
+                    <!-- Paragraph -->
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed font-normal">
+                        Danurdara adalah gerakan sosial independen yang mendedikasikan diri untuk pendampingan anak-anak, dukungan psikososial lansia, dan pemberdayaan masyarakat desa secara berkelanjutan.
+                    </p>
+
+                    <!-- Dual CTAs -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                        <a href="activities.html" class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-base font-bold text-white bg-emerald-800 hover:bg-emerald-900 hover:shadow-lg hover:shadow-emerald-900/20 active:scale-[0.98] transition-all shadow-md">
+                            Pelajari Program
+                            <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="gallery.html" class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-base font-bold text-slate-700 bg-white border border-slate-200 hover:bg-slate-100/80 hover:text-emerald-900 active:scale-[0.98] transition-all shadow-xs">
+                            <i class="fa-solid fa-images mr-2 text-emerald-800"></i>
+                            Lihat Galeri
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics Bar -->
+                    <div class="pt-6 border-t border-slate-200/60 grid grid-cols-3 gap-4 max-w-lg">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-800">770K+</div>
+                            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Penerima Manfaat</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-800">40+</div>
+                            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Program Lintas Tematik</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-800">20</div>
+                            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">Provinsi Terjangkau</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (Visual Media - 40%) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame Background Accent -->
+                        <div class="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-emerald-600 to-emerald-200 opacity-30 blur-lg"></div>
+
+                        <!-- Card Image Wrapper -->
+                        <div class="relative rounded-3xl overflow-hidden bg-white p-2.5 shadow-2xl ring-1 ring-slate-900/5">
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5]">
+                                <img src="assets/images/foto_komunitas.jpeg" alt="Foto Komunitas Danurdara" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                                
+                                <!-- Subtle Gradient Edge Shadow (Soft bottom shadow for readability) -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 1 (Top Right) -->
+                        <div class="absolute -top-4 -right-4 sm:top-6 sm:-right-6 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center space-x-3 transition-transform hover:scale-105">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-users text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">Relawan Aktif</div>
+                                <div class="text-sm font-extrabold text-slate-900">50+ Anggota Berdedikasi</div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 (Bottom Left) -->
+                        <div class="absolute -bottom-4 -left-4 sm:bottom-8 sm:-left-6 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center space-x-3 transition-transform hover:scale-105">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center">
+                                <i class="fa-solid fa-heart-pulse text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">Fokus Gerakan</div>
+                                <div class="text-sm font-extrabold text-slate-900">10+ Program Sedang Berjalan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- About Summary Section -->
-    <section id="about" class="section-padding about-section">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Tentang Danurdara</h2>
-                <p class="section-desc">Mengenal lebih dekat siapa kami dan apa yang kami perjuangkan.</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-image fade-in">
-                    <img src="assets/images/foto_komunitas.jpeg" alt="Foto Komunitas">
-                </div>
-                <div class="about-content fade-in">
-                    <h3>Sejarah Singkat</h3>
-                    <p>Danurdara adalah komunitas yang bergerak
-di bidang sosial yang berfokus pada
-pendekatan anak-anak, perempuan, dan
-lansia. Sesuai dengan makna dari nama
-komunitas mereka, Danurdara memberikan
-ilmu serta manfaat yang berdampak bagi
-fokus dan sasaran mereka. Kegiatan yang
-sering dilakukan oleh Danurdara adalah
-pendampingan anak pada pengembangan
-diri, pemberian dukungan psikososial lansia
-dalam kegiatan seni, dan sebagainya.
-
-Kata Danurdara sendiri memiliki makna yaitu
-kaya ilmu, dengan makna tersebut kami
-berharap dapat member ikan sebuah ilmu ser
-ta manfaat yang berdampak bagi fokus
-sasaran kami.</p>
-                    <a href="about.html" class="btn mt-3">Baca Selengkapnya</a>
-                </div>
-            </div>
-
-            <!-- Impact Statistics Sub-Section -->
-            <div id="impact" class="impact-subsection fade-in">
-                <div class="section-header text-center fade-in" style="margin-top: 50px; margin-bottom: 30px;">
-                    <h3 class="impact-title">JANGKAUAN DANURDARA SEJAK TAHUN 2021</h3>
-                    <div class="title-underline"></div>
-                </div>
-
-                <!-- Direct Reach Cards (Anak-Anak, Dewasa, Lansia) -->
-                <div class="impact-group fade-in">
-                    <div class="impact-cards-grid three-cols">
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="772583">0</div>
-                            <div class="stat-label">ANAK-ANAK</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="208927">0</div>
-                            <div class="stat-label">DEWASA</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="118490">0</div>
-                            <div class="stat-label">LANSIA</div>
-                        </div>
+    <!-- 3. IMPACT METRICS / STATISTIK SECTION -->
+    <section id="impact" class="py-16 bg-slate-50/60 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Card 1: Penerima Manfaat -->
+                <div class="stat-card bg-white rounded-[16px] p-6 lg:p-8 text-center border border-[#429030]/12 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#429030] hover:shadow-[0_15px_35px_rgba(66,144,48,0.12)]">
+                    <div class="flex items-center justify-center font-extrabold text-[36px] sm:text-[40px] text-[#429030] leading-none">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="text-[#EBDF01] ml-0.5">+</span>
                     </div>
-                    <p class="impact-group-subtitle">DIJANGKAU SECARA LANGSUNG</p>
-                </div>
-
-                <!-- Indirect Reach Card -->
-                <div class="impact-group fade-in">
-                    <div class="impact-cards-grid single-col">
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="17697841">0</div>
-                            <div class="stat-label">ORANG</div>
-                        </div>
+                    <div class="text-[13px] font-semibold text-[#64748B] uppercase tracking-[0.5px] mt-3">
+                        Penerima Manfaat
                     </div>
-                    <p class="impact-group-subtitle">DIJANGKAU SECARA TAK LANGSUNG</p>
                 </div>
 
-                <!-- Additional Impact Highlights -->
-                <div class="impact-group fade-in">
-                    <div class="impact-cards-grid two-cols">
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="40" data-suffix="+">0</div>
-                            <div class="stat-label">PROGRAM LINTAS TEMATIK</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="1325">0</div>
-                            <div class="stat-label">DESA DI 20 PROVINSI</div>
-                        </div>
+                <!-- Card 2: Relawan Aktif -->
+                <div class="stat-card bg-white rounded-[16px] p-6 lg:p-8 text-center border border-[#429030]/12 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#429030] hover:shadow-[0_15px_35px_rgba(66,144,48,0.12)]">
+                    <div class="flex items-center justify-center font-extrabold text-[36px] sm:text-[40px] text-[#429030] leading-none">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="text-[#EBDF01] ml-0.5">+</span>
+                    </div>
+                    <div class="text-[13px] font-semibold text-[#64748B] uppercase tracking-[0.5px] mt-3">
+                        Relawan Aktif
+                    </div>
+                </div>
+
+                <!-- Card 3: Program Selesai -->
+                <div class="stat-card bg-white rounded-[16px] p-6 lg:p-8 text-center border border-[#429030]/12 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#429030] hover:shadow-[0_15px_35px_rgba(66,144,48,0.12)]">
+                    <div class="flex items-center justify-center font-extrabold text-[36px] sm:text-[40px] text-[#429030] leading-none">
+                        <span class="stat-number" data-target="12">0</span>
+                        <span class="text-[#EBDF01] ml-0.5">+</span>
+                    </div>
+                    <div class="text-[13px] font-semibold text-[#64748B] uppercase tracking-[0.5px] mt-3">
+                        Program Selesai
+                    </div>
+                </div>
+
+                <!-- Card 4: Wilayah Impact -->
+                <div class="stat-card bg-white rounded-[16px] p-6 lg:p-8 text-center border border-[#429030]/12 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#429030] hover:shadow-[0_15px_35px_rgba(66,144,48,0.12)]">
+                    <div class="flex items-center justify-center font-extrabold text-[36px] sm:text-[40px] text-[#429030] leading-none">
+                        <span class="stat-number" data-target="5">0</span>
+                    </div>
+                    <div class="text-[13px] font-semibold text-[#64748B] uppercase tracking-[0.5px] mt-3">
+                        Wilayah Impact
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Partners Slideshow -->
-        <div class="partners-scroller" style="margin-top: 60px;">
-            <div class="container text-center mb-4">
-                <p class="section-desc" style="margin-bottom: 20px; color: var(--primary-color); font-weight: bold; font-size: 1.5rem;">Partner Kami</p>
+    <!-- PARTNER KAMI SECTION -->
+    <section class="py-14 bg-white border-b border-slate-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8 space-y-2">
+            <div class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#429030]/10 text-[#429030]">
+                MITRA & KOLABORASI
             </div>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Partner Kami</h3>
+        </div>
+        <div class="partners-scroller">
             <div class="partners-track">
                 <!-- Original Set -->
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/1-.png" alt="Partner Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/2-.jpg" alt="Partner Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/Logo Kitabisa.jpg" alt="Kitabisa Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/Logo RB.jpg" alt="Logo RB"></div>
+                <div class="slide"><img src="assets/images/partner_image/ecovibes indo logo.jpg" alt="Ecovibes Indonesia Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/jejak.kota.jpg" alt="Jejak Kota Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo basara.jpg" alt="Basara Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo envolment.png" alt="Envolment Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo ibu foundation.png" alt="IBU Foundation Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo insight.jpg" alt="Insight Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo inti.jpg" alt="INTI Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo lakuna.jpg" alt="Lakuna Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo lindungi hutan.jpg" alt="Lindungi Hutan Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo pemadam kelaparan.jpg" alt="Pemadam Kelaparan Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo salam setara.jpg" alt="Salam Setara Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo voluntrip.jpg" alt="Voluntrip Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo wujud.jpg" alt="Wujud Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo yayasan inspirasi.jpg" alt="Yayasan Inspirasi Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo_kelas tambahan.jpg" alt="Kelas Tambahan Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/rimba experiences logo.jpg" alt="Rimba Experiences Logo"></div>
                 
-                <!-- Duplicate Set for Seamless Scrolling -->
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
-                <div class="slide"><img src="assets/images/logo1.png" alt="Partner Logo"></div>
+                <!-- Duplicate Set for Seamless Infinite Scrolling -->
+                <div class="slide"><img src="assets/images/partner_image/1-.png" alt="Partner Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/2-.jpg" alt="Partner Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/Logo Kitabisa.jpg" alt="Kitabisa Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/Logo RB.jpg" alt="Logo RB"></div>
+                <div class="slide"><img src="assets/images/partner_image/ecovibes indo logo.jpg" alt="Ecovibes Indonesia Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/jejak.kota.jpg" alt="Jejak Kota Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo basara.jpg" alt="Basara Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo envolment.png" alt="Envolment Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo ibu foundation.png" alt="IBU Foundation Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo insight.jpg" alt="Insight Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo inti.jpg" alt="INTI Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo lakuna.jpg" alt="Lakuna Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo lindungi hutan.jpg" alt="Lindungi Hutan Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo pemadam kelaparan.jpg" alt="Pemadam Kelaparan Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo salam setara.jpg" alt="Salam Setara Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo voluntrip.jpg" alt="Voluntrip Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo wujud.jpg" alt="Wujud Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo yayasan inspirasi.jpg" alt="Yayasan Inspirasi Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/logo_kelas tambahan.jpg" alt="Kelas Tambahan Logo"></div>
+                <div class="slide"><img src="assets/images/partner_image/rimba experiences logo.jpg" alt="Rimba Experiences Logo"></div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Summary Section -->
-    <!-- <section id="programs" class="section-padding programs-section">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Program Unggulan</h2>
-                <p class="section-desc">Inisiatif kami untuk mendorong pertumbuhan.</p>
+
+    <!-- 4. KEGIATAN KITA SECTION -->
+    <section id="kegiatan" class="py-20 bg-slate-50/70 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+                <div class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#429030]/10 text-[#429030]">
+                    PROGRAM & AKSI NYATA
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Kegiatan Kita
+                </h2>
+                <p class="text-slate-600 text-base leading-relaxed">
+                    Dokumentasi aksi nyata relawan Sahabat Danurdara dalam berbagai program edukasi, sosial, dan pemberdayaan masyarakat.
+                </p>
             </div>
 
-            <div class="programs-grid">
-                <div class="program-card fade-in">
-                    <div class="program-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3>Edukasi</h3>
-                    <p>Pelatihan skill masa depan.</p>
-                    <a href="programs.html" class="read-more">Detail <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                    <h3>Sosial</h3>
-                    <p>Bakti untuk masyarakat.</p>
-                    <a href="programs.html" class="read-more">Detail <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3>Digital</h3>
-                    <p>Inovasi teknologi tepat guna.</p>
-                    <a href="programs.html" class="read-more">Detail <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="text-center mt-5 fade-in" style="margin-top: 40px;">
-                <a href="programs.html" class="btn btn-outline"
-                    style="border-color: var(--primary-color); color: var(--primary-color);">Lihat Semua Program</a>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Activities Summary Section -->
-    <section id="activities" class="section-padding activities-section">
-        <div class="container">
-            <div class="section-header text-center fade-in">
-                <h2 class="section-title">Kegiatan Kita</h2>
-                <p class="section-desc">Berikut adalah kegiatan-kegiatan yang sedang dan telah kami laksanakan.</p>
-            </div>
-
-            <div class="gallery-grid">
-                <!-- Item 1 -->
-                <div class="gallery-item fade-in" data-category="edukasi"
-                    data-description="Workshop koding untuk anak-anak desa, mengajarkan dasar-dasar pemrograman dan logika digital. Kegiatan ini diikuti oleh 30 peserta antusias.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #ffe0b2;">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <span class="activity-tag">Edukasi</span>
-                        <div class="gallery-overlay">
-                            <i class="fa-solid fa-eye"></i>
+            <!-- Grid 4 Kegiatan Terbaru -->
+            <div id="kegiatan-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" data-total-activities="6">
+                
+                <!-- Card 1: Workshop Koding -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" onclick="window.location.href='activity-detail.html?id=workshop-koding'">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/foto_anak.jpg" alt="Workshop Koding & Digital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-[#429030] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                            Edukasi
                         </div>
                     </div>
-                    <div class="gallery-info">
-                        <h3>Workshop Koding</h3>
-                        <p>12 Oktober 2023</p>
+                    <div class="p-5 flex flex-col flex-1 justify-between bg-white">
+                        <div class="space-y-2">
+                            <div class="flex items-center text-xs font-medium text-slate-400 space-x-1.5">
+                                <i class="fa-regular fa-calendar text-[#429030]"></i>
+                                <span>12 Oktober 2023</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-[#429030] transition-colors duration-200 line-clamp-2">
+                                Workshop Koding & Digital
+                            </h3>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-[#429030] group-hover:translate-x-1 transition-transform duration-200">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
-                <div class="gallery-item fade-in" data-category="sosial"
-                    data-description="Bakti sosial di Desa X, membagikan sembako dan pelayanan kesehatan gratis bagi lansia. Total 100 paket sembako telah disalurkan.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #c8e6c9;">
-                            <i class="fa-solid fa-hand-holding-heart"></i>
-                        </div>
-                        <span class="activity-tag">Sosial</span>
-                        <div class="gallery-overlay">
-                            <i class="fa-solid fa-eye"></i>
+                <!-- Card 2: Bakti Sosial -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" onclick="window.location.href='activity-detail.html?id=bakti-sosial'">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/foto_lansia.png" alt="Bakti Sosial & Kesehatan Lansia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-[#429030] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                            Sosial
                         </div>
                     </div>
-                    <div class="gallery-info">
-                        <h3>Bakti Sosial Desa X</h3>
-                        <p>25 September 2023</p>
+                    <div class="p-5 flex flex-col flex-1 justify-between bg-white">
+                        <div class="space-y-2">
+                            <div class="flex items-center text-xs font-medium text-slate-400 space-x-1.5">
+                                <i class="fa-regular fa-calendar text-[#429030]"></i>
+                                <span>25 September 2023</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-[#429030] transition-colors duration-200 line-clamp-2">
+                                Bakti Sosial & Kesehatan Lansia
+                            </h3>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-[#429030] group-hover:translate-x-1 transition-transform duration-200">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 3 -->
-                <div class="gallery-item fade-in" data-category="event"
-                    data-description="Meeting tahunan anggota Danurdara, membahas evaluasi program kerja tahun lalu dan merencanakan strategi baru untuk tahun depan.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #bbdefb;">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <span class="activity-tag">Event</span>
-                        <div class="gallery-overlay">
-                            <i class="fa-solid fa-eye"></i>
+                <!-- Card 3: Gathering Relawan -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" onclick="window.location.href='activity-detail.html?id=meeting-tahunan'">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/foto_komunitas.jpeg" alt="Gathering Relawan Danurdara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-[#429030] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                            Event
                         </div>
                     </div>
-                    <div class="gallery-info">
-                        <h3>Meeting Tahunan</h3>
-                        <p>10 Agustus 2023</p>
+                    <div class="p-5 flex flex-col flex-1 justify-between bg-white">
+                        <div class="space-y-2">
+                            <div class="flex items-center text-xs font-medium text-slate-400 space-x-1.5">
+                                <i class="fa-regular fa-calendar text-[#429030]"></i>
+                                <span>10 Agustus 2023</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-[#429030] transition-colors duration-200 line-clamp-2">
+                                Gathering Relawan Danurdara
+                            </h3>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-[#429030] group-hover:translate-x-1 transition-transform duration-200">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 4 -->
-                <div class="gallery-item fade-in" data-category="event"
-                    data-description="Meeting tahunan anggota Danurdara, membahas evaluasi program kerja tahun lalu dan merencanakan strategi baru untuk tahun depan.">
-                    <div class="gallery-thumb">
-                        <div class="image-placeholder-small" style="background-color: #bbdefb;">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-                        <span class="activity-tag">Event</span>
-                        <div class="gallery-overlay">
-                            <i class="fa-solid fa-eye"></i>
+                <!-- Card 4: Festival Budaya -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer" onclick="window.location.href='activity-detail.html?id=festival-budaya'">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/foto_galeri.jpeg" alt="Festival Seni & Budaya Pemuda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-[#429030] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                            Event
                         </div>
                     </div>
-                    <div class="gallery-info">
-                        <h3>Meeting Tahunan</h3>
-                        <p>10 Agustus 2023</p>
+                    <div class="p-5 flex flex-col flex-1 justify-between bg-white">
+                        <div class="space-y-2">
+                            <div class="flex items-center text-xs font-medium text-slate-400 space-x-1.5">
+                                <i class="fa-regular fa-calendar text-[#429030]"></i>
+                                <span>05 Juli 2023</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base group-hover:text-[#429030] transition-colors duration-200 line-clamp-2">
+                                Festival Seni & Budaya Pemuda
+                            </h3>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center text-xs font-bold text-[#429030] group-hover:translate-x-1 transition-transform duration-200">
+                            <span>Lihat Detail</span>
+                            <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
-            <div class="text-center mt-5 fade-in" style="margin-top: 40px;">
-                <a href="activities.html" class="btn">Lihat Semua Berita</a>
+            <!-- Conditional "Lihat Semua Kegiatan" Button Container -->
+            <div id="see-all-kegiatan-wrapper" class="mt-12 text-center">
+                <a href="activities.html" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#429030] hover:bg-[#347525] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 space-x-2 group">
+                    <span>Lihat Semua Kegiatan</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform duration-200"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Activity Modal -->
-    <div id="activity-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <div class="modal-image-container">
-                    <!-- Placeholder for image/canvas -->
-                    <div id="modal-image-placeholder" class="modal-image-placeholder">
-                        <i id="modal-icon" class="fa-solid fa-image"></i>
+    <!-- Seamless Gradient Transition (#F8FAFC -> #0F2410) -->
+    <div class="w-full h-16 sm:h-24 pointer-events-none" style="background: linear-gradient(180deg, #F8FAFC 0%, #0F2410 100%);"></div>
+
+    <!-- 8. PROFESSIONAL DARK FOOTER -->
+    <footer style="background-color: #0F2410; padding: 60px 0 30px 0;" class="text-slate-300 border-t-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <!-- Col 1 (Brand Info - 2 cols) -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="inline-block">
+                        <img src="assets/images/logo-new.png" alt="Danurdara Logo" class="h-14 sm:h-16 w-auto object-contain">
+                    </a>
+                    <p class="text-[#CBD5E1] text-[14px] leading-relaxed max-w-sm">
+                        Gerakan sosial independen yang bergerak di bidang pendampingan anak, dukungan psikososial lansia, dan pemberdayaan masyarakat.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-[#CBD5E1] hover:bg-[#429030] hover:border-[#429030] hover:text-white transition-all duration-200" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(66, 144, 48, 0.3);">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-[#CBD5E1] hover:bg-[#429030] hover:border-[#429030] hover:text-white transition-all duration-200" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(66, 144, 48, 0.3);">
+                            <i class="fa-brands fa-facebook text-sm"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-[#CBD5E1] hover:bg-[#429030] hover:border-[#429030] hover:text-white transition-all duration-200" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(66, 144, 48, 0.3);">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="modal-text">
-                    <span id="modal-category" class="modal-tag">Kategori</span>
-                    <h2 id="modal-title">Judul Kegiatan</h2>
-                    <p id="modal-date" class="modal-date">Tanggal</p>
-                    <div class="modal-description-container">
-                        <p id="modal-description">Deskripsi lengkap kegiatan.</p>
-                    </div>
+
+                <!-- Col 2 (Navigasi) -->
+                <div class="space-y-3">
+                    <h4 style="color: #EBDF01; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Navigasi</h4>
+                    <ul class="space-y-2 text-[14px]">
+                        <li><a href="index.html" class="text-[#CBD5E1] hover:text-[#EBDF01] transition-colors duration-200">Beranda</a></li>
+                        <li><a href="about.html" class="text-[#CBD5E1] hover:text-[#EBDF01] transition-colors duration-200">Tentang Kami</a></li>
+                        <li><a href="activities.html" class="text-[#CBD5E1] hover:text-[#EBDF01] transition-colors duration-200">Program Utama</a></li>
+                        <li><a href="gallery.html" class="text-[#CBD5E1] hover:text-[#EBDF01] transition-colors duration-200">Galeri Foto</a></li>
+                        <li><a href="join.html" class="text-[#CBD5E1] hover:text-[#EBDF01] transition-colors duration-200">Bergabung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 (Pilar Gerakan) -->
+                <div class="space-y-3">
+                    <h4 style="color: #EBDF01; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Pilar Gerakan</h4>
+                    <ul class="space-y-2 text-[14px] text-[#CBD5E1]">
+                        <li>Pemberdayaan Anak</li>
+                        <li>Dukungan Lansia</li>
+                        <li>Edukasi & Lingkungan</li>
+                        <li>Aksi Tanggap Sosial</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 (Kontak Kami) -->
+                <div class="space-y-3">
+                    <h4 style="color: #EBDF01; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Kontak</h4>
+                    <ul class="space-y-2.5 text-[14px] text-[#CBD5E1]">
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-location-dot mt-1 text-[#EBDF01]"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5">
+                            <i class="fa-solid fa-envelope text-[#EBDF01]"></i>
+                            <span>halo@danurdara.org</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5">
+                            <i class="fa-solid fa-phone text-[#EBDF01]"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-
-    </div>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3 class="footer-logo">Danurdara</h3>
-                <p>Membangun generasi emas untuk masa depan yang lebih cerah. Bergabunglah bersama kami.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-8 border-t border-[#132E14]/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 space-y-4 sm:space-y-0">
+                <p>&copy; 2026 Sahabat Danurdara. Hak Cipta Dilindungi.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-[#EBDF01] transition-colors duration-200">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-[#EBDF01] transition-colors duration-200">Syarat & Ketentuan</a>
                 </div>
             </div>
-
-            <div class="footer-col">
-                <h4>Tautan Cepat</h4>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="activities.html">Program</a></li>
-                    <li><a href="join.html">Bergabung</a></li>
-                    <li><a href="gallery.html">Galeri</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Hubungi Kami</h4>
-                <ul class="contact-info">
-                    <li><i class="fa-solid fa-location-dot"></i> Jl. Merdeka No. 123, Jakarta</li>
-                    <li><i class="fa-solid fa-envelope"></i> info@danurdara.org</li>
-                    <li><i class="fa-solid fa-phone"></i> +62 812 3456 7890</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            <p>&copy; 2023 Danurdara. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Main JavaScript File -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- JavaScript for Mobile Menu Drawer Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('mobile-menu-icon');
+
+            if (toggleBtn && mobileMenu) {
+                toggleBtn.addEventListener('click', () => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-xmark');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
